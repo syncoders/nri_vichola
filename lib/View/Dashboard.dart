@@ -12,32 +12,35 @@ class DashBoard extends StatelessWidget {
   final DashboardController dashboardController=Get.put(DashboardController());
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-     // backgroundColor: Colors.grey,
+    return Obx(()=>Scaffold(
+       appBar: _appBar(dashboardController.currentIndex.value),
+      backgroundColor: Colors.white,
       body: Obx(()=>body(dashboardController.currentIndex.value)),
       bottomNavigationBar: Obx(()=>BottomNavigationBar(
-        elevation: 10,
+        elevation: 10.0,
+        backgroundColor: Colors.white,
+        type: BottomNavigationBarType.fixed,
         unselectedItemColor: Colors.grey,
         selectedItemColor: ColorUtils.primaryColor,
         currentIndex: dashboardController.currentIndex.value, // this will be set when a new tab is tapped
         onTap: dashboardController.onTabChange,
         items: [
           BottomNavigationBarItem(
-            icon: new Icon(FontAwesomeIcons.userFriends),
-            label: ""
+              icon: new Icon(FontAwesomeIcons.userFriends),
+              label: ""
           ),
           BottomNavigationBarItem(
-            icon: new Icon(Icons.home),
+              icon: new Icon(FontAwesomeIcons.solidBookmark),
               label: ""
 
           ),
           BottomNavigationBarItem(
-            icon: new Icon(Icons.home),
+              icon: new Icon(FontAwesomeIcons.solidComments),
               label: ""
 
           ),
           BottomNavigationBarItem(
-            icon: new Icon(Icons.mail),
+              icon: new Icon(FontAwesomeIcons.userAlt),
               label: ""
 
 
@@ -45,8 +48,63 @@ class DashBoard extends StatelessWidget {
           )
         ],
       )),
-    );
+    ));
   }
+
+
+  _appBar(int index){
+    switch(index){
+      case 0 :
+        return AppBar(
+          backgroundColor: Colors.white,
+          elevation: 1,
+          centerTitle: false,
+          title: Text("SoulMeet",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600,color: Colors.black)),actions: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Center(child: Text("Set preference",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,color: Colors.black),)),
+            )
+        ],);
+        break;
+      case 1 :
+        return AppBar(
+          elevation: 1,
+          backgroundColor: Colors.white,
+            centerTitle: false,
+          title: Text("Bookmarked",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600,color: Colors.black)),
+          actions: [
+            IconButton(icon: Icon(FontAwesomeIcons.search,color: Colors.black,), onPressed:(){})
+          ],
+        );
+        break;
+      case 2 :
+        return AppBar(
+          elevation: 1,
+          backgroundColor: Colors.white,
+            centerTitle: false,
+          title: Text("Chats",style: TextStyle(fontSize:20,fontWeight: FontWeight.w600,color: Colors.black)),
+          actions: [
+            IconButton(icon: Icon(FontAwesomeIcons.search,color: Colors.black,), onPressed:(){})
+          ],
+        );
+        break;
+      case 3 :
+        return AppBar(
+          elevation: 1,
+          backgroundColor: Colors.white,
+            centerTitle: false,
+          title: Text("Account",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600,color: Colors.black)),
+          actions: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Center(child: Text("Logout",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600,color: Colors.black),)),
+            )
+          ],
+        );
+        break;
+    }
+  }
+
   body(int index){
     switch(index){
       case 0 :

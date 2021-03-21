@@ -13,7 +13,7 @@ class SplashScreenController extends GetxController{
 
     Timer(
         Duration(seconds: 3),
-            () => Get.toNamed(signIn)
+            () => Get.offAndToNamed(signIn)
     );
   }
 }
