@@ -13,8 +13,8 @@ class DashBoard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey,
-      body: Obx(()=>_body(dashboardController.currentIndex.value)),
+     // backgroundColor: Colors.grey,
+      body: Obx(()=>body(dashboardController.currentIndex.value)),
       bottomNavigationBar: Obx(()=>BottomNavigationBar(
         elevation: 10,
         unselectedItemColor: Colors.grey,
@@ -47,7 +47,7 @@ class DashBoard extends StatelessWidget {
       )),
     );
   }
-  _body(int index){
+  body(int index){
     switch(index){
       case 0 :
         return SoulMeet();

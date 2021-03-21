@@ -1,15 +1,19 @@
+import 'dart:async';
+
 import 'package:get/get.dart';
+import 'package:nri_vichola/Route/RouteConstant.dart';
 
 class SplashScreenController extends GetxController{
+  
 
-  Function duringSplash = () {
-    print('Something background process');
-    int a = 123 + 23;
-    print(a);
+ @override
+  void onInit() {
+    // TODO: implement onInit
+    super.onInit();
 
-    if (a > 100)
-      return 1;
-    else
-      return 2;
-  };
+    Timer(
+        Duration(seconds: 3),
+            () => Get.toNamed(signIn)
+    );
+  }
 }

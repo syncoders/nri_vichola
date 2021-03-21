@@ -10,13 +10,9 @@ class Splash extends StatelessWidget {
   final SplashScreenController screenController=Get.put(SplashScreenController());
   @override
   Widget build(BuildContext context) {
-    return AnimatedSplash(
-      imagePath: PngUtils.splashLogo,
-      home: Login(),
-   //   customFunction: screenController.duringSplash,
-      duration: 4000,
-      type: AnimatedSplashType.StaticDuration,
-    //  outputAndHome: op,
+    return Container(
+      color: Colors.white,
+      child: Image.asset(PngUtils.splashLogo),
     );
   }
 }
