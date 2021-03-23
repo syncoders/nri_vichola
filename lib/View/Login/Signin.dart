@@ -22,7 +22,7 @@ class Login extends StatelessWidget {
                 child: SvgPicture.asset(
                     SvgUtils.signInCouple,
                     semanticsLabel: 'signin Logo',
-                  fit: BoxFit.cover,
+                  fit: BoxFit.contain,
                 ),
               ),
               Padding(

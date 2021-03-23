@@ -14,7 +14,7 @@ class DashBoard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(()=>Scaffold(
        appBar: _appBar(dashboardController.currentIndex.value),
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.grey[100],
       body: Obx(()=>body(dashboardController.currentIndex.value)),
       bottomNavigationBar: Obx(()=>BottomNavigationBar(
         elevation: 10.0,
@@ -62,7 +62,7 @@ class DashBoard extends StatelessWidget {
           title: Text("SoulMeet",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600,color: Colors.black)),actions: [
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Center(child: Text("Set preference",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,color: Colors.black),)),
+              child: Center(child: Text("Set preference",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,color: ColorUtils.primaryColor),)),
             )
         ],);
         break;
