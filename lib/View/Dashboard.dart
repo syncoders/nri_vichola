@@ -78,15 +78,16 @@ class DashBoard extends StatelessWidget {
         );
         break;
       case 2 :
-        return AppBar(
-          elevation: 1,
-          backgroundColor: Colors.white,
-            centerTitle: false,
-          title: Text("Chats",style: TextStyle(fontSize:20,fontWeight: FontWeight.w600,color: Colors.black)),
-          actions: [
-            IconButton(icon: Icon(FontAwesomeIcons.search,color: Colors.black,), onPressed:(){})
-          ],
-        );
+        return null;
+//          AppBar(
+//          elevation: 1,
+//          backgroundColor: Colors.white,
+//            centerTitle: false,
+//          title: Text("Chats",style: TextStyle(fontSize:20,fontWeight: FontWeight.w600,color: Colors.black)),
+//          actions: [
+//            IconButton(icon: Icon(FontAwesomeIcons.search,color: Colors.black,), onPressed:(){})
+//          ],
+//        );
         break;
       case 3 :
         return AppBar(
