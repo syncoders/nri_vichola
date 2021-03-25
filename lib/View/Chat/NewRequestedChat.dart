@@ -8,7 +8,7 @@ class NewRequestedChat extends StatelessWidget {
 
         itemCount: 10,
         itemBuilder:(BuildContext context,int value){
-          return ProfileCard(isBookMarked: true,);
+          return ProfileCard(isDeleted: true,);
         });
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 class AccpectedChat extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -16,12 +17,17 @@ class AccpectedChat extends StatelessWidget {
                 width: Get.width*0.20,
                 fit: BoxFit.fill,
               ),
-              title: Text("Suchandra"),
+              title: Text("Samantha Smith",style: GoogleFonts.openSans(
+              textStyle: TextStyle(color: Colors.black87, fontSize: 18,fontWeight: FontWeight.w700),)),
               subtitle: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Suchandra"),
-                  Text("Suchandra")
+                  Text("Ok,Thank you",style: GoogleFonts.openSans(
+                    textStyle: TextStyle(color: Colors.black54, fontSize: 15,fontWeight: FontWeight.w400),)),
+                  SizedBox(height: 5,),
+                  Text("Today,11:25am",style: GoogleFonts.openSans(
+                    textStyle: TextStyle(color: Colors.black54, fontSize: 13,fontWeight: FontWeight.w400),)),
+                  SizedBox(height: 5,),
 
                 ],
               ),

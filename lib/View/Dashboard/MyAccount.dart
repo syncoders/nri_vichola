@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:nri_vichola/Utils/ColorUtils.dart';
 class MyAccount extends StatelessWidget {
   @override
@@ -22,10 +23,13 @@ class MyAccount extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Hey,"),
-                    Text("George Smith,"),
+                    Text("Hey,",style: GoogleFonts.openSans(
+                      textStyle: TextStyle(color: Colors.black87, fontSize:30,fontWeight: FontWeight.w700),)),
+                    Text("George Smith,",style: GoogleFonts.openSans(
+                      textStyle: TextStyle(color: Colors.black87, fontSize:22,fontWeight: FontWeight.w700)),maxLines: 2,),
                     SizedBox(height: 10,),
-                    Text("View Profile"),
+                    Text("View Profile",style: GoogleFonts.openSans(
+                      textStyle: TextStyle(color: Colors.black54, fontSize: 17,fontWeight: FontWeight.w400),)),
 
                   ],
                 ),
@@ -39,7 +43,24 @@ class MyAccount extends StatelessWidget {
           color: ColorUtils.primaryColor,
           child: ListTile(
             minVerticalPadding: 25,
-            title: Text("You're Subscribed"),
+            title: Text("You're Subscribed",style: GoogleFonts.openSans(
+              textStyle: TextStyle(color: Colors.white, fontSize:20,fontWeight: FontWeight.w700),)),
+            subtitle:Text("Premimum plan",style: GoogleFonts.openSans(
+              textStyle: TextStyle(color: Colors.white70, fontSize: 17,fontWeight: FontWeight.w400),)),
+            trailing: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(FontAwesomeIcons.chevronRight ,color: Colors.white, ),
+              ],
+            ),
+          ),
+        ),
+        Container(
+          color: Colors.white,
+          child: ListTile(
+            minVerticalPadding: 25,
+            title: Text("You're Subscribed",style: GoogleFonts.openSans(
+              textStyle: TextStyle(color: Colors.black, fontSize:20,fontWeight: FontWeight.w700),)),
             subtitle:Text("You're Subscribed"),
             trailing: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -53,7 +74,8 @@ class MyAccount extends StatelessWidget {
           color: Colors.white,
           child: ListTile(
             minVerticalPadding: 25,
-            title: Text("You're Subscribed"),
+            title: Text("You're Subscribed",style: GoogleFonts.openSans(
+              textStyle: TextStyle(color: Colors.black, fontSize:20,fontWeight: FontWeight.w700),)),
             subtitle:Text("You're Subscribed"),
             trailing: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -67,21 +89,8 @@ class MyAccount extends StatelessWidget {
           color: Colors.white,
           child: ListTile(
             minVerticalPadding: 25,
-            title: Text("You're Subscribed"),
-            subtitle:Text("You're Subscribed"),
-            trailing: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(FontAwesomeIcons.chevronRight  ),
-              ],
-            ),
-          ),
-        ),
-        Container(
-          color: Colors.white,
-          child: ListTile(
-            minVerticalPadding: 25,
-            title: Text("You're Subscribed"),
+            title: Text("You're Subscribed",style: GoogleFonts.openSans(
+              textStyle: TextStyle(color: Colors.black, fontSize:20,fontWeight: FontWeight.w700),)),
             subtitle:Text("You're Subscribed"),
             trailing: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -95,7 +104,8 @@ class MyAccount extends StatelessWidget {
           color: Colors.white,
           child:ListTile(
             minVerticalPadding: 25,
-            title: Text("You're Subscribed"),
+            title: Text("You're Subscribed",style: GoogleFonts.openSans(
+              textStyle: TextStyle(color: Colors.black, fontSize:20,fontWeight: FontWeight.w700),)),
             subtitle:Text("You're Subscribed"),
             trailing: Column(
               mainAxisAlignment: MainAxisAlignment.center,

@@ -7,7 +7,7 @@ class PendingChat extends StatelessWidget {
         padding: EdgeInsets.only(top: 0),
         itemCount: 10,
         itemBuilder:(BuildContext context,int value){
-          return ProfileCard(isBookMarked: true,);
+          return ProfileCard(isBookMarked: false,pendingRequest: true,);
         });
   }
 }

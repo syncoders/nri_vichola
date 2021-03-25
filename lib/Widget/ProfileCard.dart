@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:nri_vichola/Utils/ColorUtils.dart';
 
 class ProfileCard extends StatelessWidget {
   final bool isBookMarked;
+  final bool isDeleted,pendingRequest;
 
-  ProfileCard({Key key, this.isBookMarked}) : super(key: key);
+
+  ProfileCard({Key key, this.isBookMarked, this.isDeleted, this.pendingRequest}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -19,15 +22,26 @@ class ProfileCard extends StatelessWidget {
             padding:  EdgeInsets.symmetric(horizontal: 20),
             child: Row(
               children: [
-                Text("Suchandra"),
+                Text("Opera Yella",style:  GoogleFonts.openSans(
+                  textStyle: TextStyle(color: Colors.black, fontSize: 18,fontWeight: FontWeight.w700),),),
                 Spacer(),
                 Row(
                   children: [
-                    Text("26 Years | 5'4 feet"),
+                    Text("26 Years | 5'4 feet",style:  GoogleFonts.poppins(
+                      textStyle: TextStyle(color: Colors.black87, fontSize:14,fontWeight: FontWeight.w400),),),
                     SizedBox(
                       width: 10,
                     ),
-                    !isBookMarked?
+                    isDeleted??false?CircleAvatar(
+                      radius: Get.size.width * 0.035+1,
+                      backgroundColor: ColorUtils.primaryColor,
+                      child: CircleAvatar(
+                        backgroundColor: Colors.white,
+                        radius: Get.size.width * 0.035,
+                        child: Icon(FontAwesomeIcons.times,
+                            size: Get.size.width * 0.035, color: ColorUtils.primaryColor),
+                      ),
+                    ):!isBookMarked?
                     CircleAvatar(
                       radius: Get.size.width * 0.035+1,
                       backgroundColor: ColorUtils.primaryColor,
@@ -63,9 +77,15 @@ class ProfileCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Text("Suchandra"),
-                        Text("Suchandra"),
-                        Text("Suchandra"),
+                        Text("Catholic Christian",style: GoogleFonts.openSans(
+                          textStyle: TextStyle(color: Colors.black87, fontSize: 17,fontWeight: FontWeight.w400),),),
+
+                        Text("India",style: GoogleFonts.openSans(
+                          textStyle: TextStyle(color: Colors.black87, fontSize: 17,fontWeight: FontWeight.w400),)),
+                        Text("UI/UX Designer",style: GoogleFonts.openSans(
+                          textStyle: TextStyle(color: Colors.black87, fontSize: 17,fontWeight: FontWeight.w400),)),
+                        Text("Computer Science",style: GoogleFonts.openSans(
+                          textStyle: TextStyle(color: Colors.black87, fontSize: 17,fontWeight: FontWeight.w400),)),
                       ],
                     ),
                   ),
@@ -111,8 +131,11 @@ class ProfileCard extends StatelessWidget {
                     ),
                     child: Padding(
                       padding:
-                          EdgeInsets.symmetric(vertical: Get.height * .014),
-                      child: Text('More info'),
+                          EdgeInsets.symmetric(vertical: Get.height * .01),
+                      child: FittedBox(
+                        child: Text('More info',style: GoogleFonts.openSans(
+    textStyle: TextStyle(fontSize: 20,fontWeight: FontWeight.w400),),),
+                      ),
                     ),
                     onPressed: () {
                       // Get.offAndToNamed(dashboard);
@@ -122,7 +145,34 @@ class ProfileCard extends StatelessWidget {
                 SizedBox(
                   width: Get.size.width * 0.03,
                 ),
+                pendingRequest??false?
                 Expanded(
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                      elevation: MaterialStateProperty.all(0),
+                      shape:
+                      MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5),
+                              side: BorderSide(color: ColorUtils.primaryColor,width: 2))),
+                      backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
+                      foregroundColor: MaterialStateProperty.all<Color>(ColorUtils.primaryColor),
+
+                    ),
+                    child: Padding(
+                      padding:
+                      EdgeInsets.symmetric(vertical: Get.height * .01),
+                      child: FittedBox(
+                        child: Text('Pending Request',style: GoogleFonts.openSans(
+                          textStyle: TextStyle(fontSize: 20,fontWeight: FontWeight.w400),),),
+                      ),
+                    ),
+                    onPressed: () {
+                      // Get.offAndToNamed(dashboard);
+                    },
+                  ),
+                )
+                :Expanded(
                   child: ElevatedButton(
                     style: ButtonStyle(
                       elevation: MaterialStateProperty.all(0),
@@ -137,8 +187,11 @@ class ProfileCard extends StatelessWidget {
                     ),
                     child: Padding(
                       padding:
-                      EdgeInsets.symmetric(vertical: Get.height * .014),
-                      child: Text('Connect Request'),
+                      EdgeInsets.symmetric(vertical: Get.height * .01),
+                      child: FittedBox(
+                        child: Text(isDeleted??false?'Accept Request':'Connect Request',style: GoogleFonts.openSans(
+                          textStyle: TextStyle( fontSize: 20,fontWeight: FontWeight.w400),)),
+                      ),
                     ),
                     onPressed: () {
                       // Get.offAndToNamed(dashboard);

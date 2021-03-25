@@ -82,7 +82,7 @@ class Login extends StatelessWidget {
                         child: Text('Login'),
                       ),
                       onPressed: (){
-                        Get.offAndToNamed(dashboard);
+                        Get.toNamed(dashboard);
 
                       },
                     ),
