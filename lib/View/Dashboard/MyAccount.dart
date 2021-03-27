@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:nri_vichola/Route/RouteConstant.dart';
 import 'package:nri_vichola/Utils/ColorUtils.dart';
 class MyAccount extends StatelessWidget {
   @override
@@ -42,6 +43,8 @@ class MyAccount extends StatelessWidget {
         Container(
           color: ColorUtils.primaryColor,
           child: ListTile(
+            onTap: ()=>Get.toNamed(subscriptionLiat),
+
             minVerticalPadding: 25,
             title: Text("You're Subscribed",style: GoogleFonts.openSans(
               textStyle: TextStyle(color: Colors.white, fontSize:20,fontWeight: FontWeight.w700),)),
@@ -58,8 +61,9 @@ class MyAccount extends StatelessWidget {
         Container(
           color: Colors.white,
           child: ListTile(
+
             minVerticalPadding: 25,
-            title: Text("You're Subscribed",style: GoogleFonts.openSans(
+            title: Text("Contact us",style: GoogleFonts.openSans(
               textStyle: TextStyle(color: Colors.black, fontSize:20,fontWeight: FontWeight.w700),)),
             subtitle:Text("You're Subscribed"),
             trailing: Column(
@@ -73,8 +77,12 @@ class MyAccount extends StatelessWidget {
         Container(
           color: Colors.white,
           child: ListTile(
+            onTap: (){
+              Get.toNamed(aboutUs);
+
+            },
             minVerticalPadding: 25,
-            title: Text("You're Subscribed",style: GoogleFonts.openSans(
+            title: Text("About us",style: GoogleFonts.openSans(
               textStyle: TextStyle(color: Colors.black, fontSize:20,fontWeight: FontWeight.w700),)),
             subtitle:Text("You're Subscribed"),
             trailing: Column(
@@ -88,8 +96,11 @@ class MyAccount extends StatelessWidget {
         Container(
           color: Colors.white,
           child: ListTile(
+            onTap: (){
+              Get.toNamed(tremsAndCondition);
+            },
             minVerticalPadding: 25,
-            title: Text("You're Subscribed",style: GoogleFonts.openSans(
+            title: Text("Terms & Condition",style: GoogleFonts.openSans(
               textStyle: TextStyle(color: Colors.black, fontSize:20,fontWeight: FontWeight.w700),)),
             subtitle:Text("You're Subscribed"),
             trailing: Column(
@@ -104,7 +115,7 @@ class MyAccount extends StatelessWidget {
           color: Colors.white,
           child:ListTile(
             minVerticalPadding: 25,
-            title: Text("You're Subscribed",style: GoogleFonts.openSans(
+            title: Text("Rate us",style: GoogleFonts.openSans(
               textStyle: TextStyle(color: Colors.black, fontSize:20,fontWeight: FontWeight.w700),)),
             subtitle:Text("You're Subscribed"),
             trailing: Column(

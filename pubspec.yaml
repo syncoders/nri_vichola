@@ -33,6 +33,8 @@ dependencies:
   animated_splash:
   flutter_svg:
   font_awesome_flutter:
+  bubble:
+  flutter_swiper:
 dev_dependencies:
   flutter_test:
     sdk: flutter

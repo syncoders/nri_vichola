@@ -21,6 +21,8 @@ class Chat extends StatelessWidget {
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
             SliverAppBar(
+              automaticallyImplyLeading: false,
+
               centerTitle: false,
               backgroundColor: Colors.white,
               title: Text("Chats",

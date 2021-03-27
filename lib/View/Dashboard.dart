@@ -56,6 +56,7 @@ class DashBoard extends StatelessWidget {
     switch(index){
       case 0 :
         return AppBar(
+          automaticallyImplyLeading: false,
           backgroundColor: Colors.white,
           elevation: 1,
           centerTitle: false,
@@ -68,6 +69,8 @@ class DashBoard extends StatelessWidget {
         break;
       case 1 :
         return AppBar(
+          automaticallyImplyLeading: false,
+
           elevation: 1,
           backgroundColor: Colors.white,
             centerTitle: false,
@@ -91,6 +94,8 @@ class DashBoard extends StatelessWidget {
         break;
       case 3 :
         return AppBar(
+          automaticallyImplyLeading: false,
+
           elevation: 1,
           backgroundColor: Colors.white,
             centerTitle: false,
