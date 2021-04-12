@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:nri_vichola/Controller/DashboardController.dart';
+import 'package:nri_vichola/Route/RouteConstant.dart';
 import 'package:nri_vichola/Utils/ColorUtils.dart';
 import 'package:nri_vichola/View/Dashboard/BookMark.dart';
 import 'package:nri_vichola/View/Dashboard/SoulMeet.dart';
@@ -61,9 +62,14 @@ class DashBoard extends StatelessWidget {
           elevation: 1,
           centerTitle: false,
           title: Text("SoulMeet",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600,color: Colors.black)),actions: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Center(child: Text("Set preference",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,color: ColorUtils.primaryColor),)),
+            InkWell(
+              onTap: (){
+                Get.toNamed(setPreference);
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Center(child: Text("Set preference",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,color: ColorUtils.primaryColor),)),
+              ),
             )
         ],);
         break;

@@ -29,8 +29,13 @@ class MyAccount extends StatelessWidget {
                     Text("George Smith,",style: GoogleFonts.openSans(
                       textStyle: TextStyle(color: Colors.black87, fontSize:22,fontWeight: FontWeight.w700)),maxLines: 2,),
                     SizedBox(height: 10,),
-                    Text("View Profile",style: GoogleFonts.openSans(
-                      textStyle: TextStyle(color: Colors.black54, fontSize: 17,fontWeight: FontWeight.w400),)),
+                    InkWell(
+                      onTap: (){
+                        Get.toNamed(myProfile);
+                      },
+                      child: Text("View Profile",style: GoogleFonts.openSans(
+                        textStyle: TextStyle(color: Colors.black54, fontSize: 17,fontWeight: FontWeight.w400),)),
+                    ),
 
                   ],
                 ),

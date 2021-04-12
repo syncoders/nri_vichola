@@ -10,7 +10,8 @@ class SubscriptionLiat extends StatelessWidget {
       appBar: AppBar(
         centerTitle: false,
         backgroundColor: Colors.white,
-        elevation: 0,iconTheme: IconThemeData(
+        elevation: 0,
+        iconTheme: IconThemeData(
           color: ColorUtils.primaryColor
       ),title: Text("Subscription",style: TextStyle(color: Colors.black),),),
       body: ListView(
