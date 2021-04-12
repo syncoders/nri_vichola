@@ -66,7 +66,9 @@ class MyAccount extends StatelessWidget {
         Container(
           color: Colors.white,
           child: ListTile(
-
+            onTap: (){
+              Get.toNamed(contactUs);
+            },
             minVerticalPadding: 25,
             title: Text("Contact us",style: GoogleFonts.openSans(
               textStyle: TextStyle(color: Colors.black, fontSize:20,fontWeight: FontWeight.w700),)),

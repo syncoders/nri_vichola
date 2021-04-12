@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:nri_vichola/View/AboutUs.dart';
 import 'package:nri_vichola/View/Chat/ChatDeatils.dart';
+import 'package:nri_vichola/View/ContactUs.dart';
 import 'package:nri_vichola/View/Dashboard.dart';
 import 'package:nri_vichola/View/Login/ForgotPassword.dart';
 import 'package:nri_vichola/View/Login/SignUp.dart';
@@ -41,7 +42,9 @@ class NavRouter {
     GetPage(name: subscriptionLiat, page: ()=>SubscriptionLiat()),
     GetPage(name: userProfile, page: ()=>UserProfile()),
     GetPage(name: setPreference, page: ()=>SetPreference()),
-    GetPage(name: myProfile, page: ()=>MyProfile())
+    GetPage(name: myProfile, page: ()=>MyProfile()),
+    GetPage(name: contactUs, page: ()=>ContactUs())
+
 
   ];
 }
